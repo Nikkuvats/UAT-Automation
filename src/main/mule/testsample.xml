@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:sockets="http://www.mulesoft.org/schema/mule/sockets"
+	xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
+http://www.mulesoft.org/schema/mule/sockets http://www.mulesoft.org/schema/mule/sockets/current/mule-sockets.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="GETDEMO" doc:name="HTTP Listener config" doc:id="73fb0b38-1ec1-48e2-a122-0aa03de155ee" >
+		<http:listener-connection host="0.0.0.0" port="9094" />
+	</http:listener-config>
+	<flow name="testsampleFlow" doc:id="826f81b7-b80d-4d74-bb0a-2079f195f704" >
+		<http:listener doc:name="Listener" doc:id="7a110b6d-6746-49a3-b274-6a355f661a82" config-ref="GETDEMO" path="/mulesoft"/>
+		<set-payload value="Hello Mulesoft" doc:name="Set Payload" doc:id="cd2ee5d7-0bfa-46ff-a382-78480bc4b03c" />
+	</flow>
+</mule>
